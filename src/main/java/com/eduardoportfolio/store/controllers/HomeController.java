@@ -21,7 +21,7 @@ public class HomeController {
 	public String index(){
 		//Here we'll load the products
 		System.out.println("Loading products");
-		return "hello-world.jsp";
+		return "hello-world";
 	}
 	
 	
