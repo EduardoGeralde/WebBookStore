@@ -8,18 +8,20 @@ import javax.persistence.Lob;
 
 /**
  * 
- * @author Eduardo
+ * @author Eduardo Geralde Neto
  * 
  *
  */
-
+//Indicates that the class have to be represented by a table in DB
 @Entity
 public class Product {
-	
+	//Indicates that the attribute is a primary key
 	@Id
+	//Indicates how the primary key will be generated
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String title;
+	//Indicates that the attribute will be saved like a CLOB or BLOB in the DB
 	@Lob
 	private String description;
 	private int pages;
