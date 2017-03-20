@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
-	//Tell MVC which URL this method should respond (Called Binding).
+	//Tell MVC which URL this method should respond (Binding).
 	@RequestMapping("/")
 	public String index(){
 		//Here we'll load the products
