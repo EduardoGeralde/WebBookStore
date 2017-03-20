@@ -20,9 +20,10 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 
 	//Returns one or more classes responsible for indicates which other classes has to be read during 
 	//the loading of the application.
+	
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] {AppWebConfiguration.class};
+		return new Class[] {AppWebConfiguration.class, JPAConfiguration.class};
 	}
 
 	//This method tells what's the pattern of address will be delegate to Spring MVC Servlet.
@@ -32,5 +33,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	}
 
 }
+
+
 
 
