@@ -3,7 +3,7 @@ package com.eduardoportfolio.store.models;
 public class Product {
 	
 	private String title;
-	private String descrption;
+	private String description;
 	private int pages;
 	
 	
@@ -13,18 +13,18 @@ public class Product {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDescrption() {
-		return descrption;
+	public String getDescription() {
+		return description;
 	}
-	public void setDescrption(String descrption) {
-		this.descrption = descrption;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public int getPages() {
 		return pages;
 	}
 	public void setPages(int pages) {
 		this.pages = pages;
-	}
-	
-	
+	}	
 }
+
+
