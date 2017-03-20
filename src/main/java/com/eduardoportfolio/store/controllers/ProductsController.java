@@ -5,6 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.eduardoportfolio.store.models.Product;
 
+/**
+ * 
+ * @author Eduardo
+ * 
+ *
+ */
+
 @Controller
 public class ProductsController {
 	
@@ -13,6 +20,10 @@ public class ProductsController {
 		System.out.println("Registering the product"+product);
 		return "products/ok";
 	}
+	
+	@RequestMapping("/products/form")
+	public String form(){
+		return "products/form";
+	}
 }
-
 

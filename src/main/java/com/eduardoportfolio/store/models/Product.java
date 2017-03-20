@@ -1,5 +1,12 @@
 package com.eduardoportfolio.store.models;
 
+/**
+ * 
+ * @author Eduardo
+ * 
+ *
+ */
+
 public class Product {
 	
 	private String title;
@@ -31,8 +38,6 @@ public class Product {
 		return "Produto [title=" + title + ", description="
 				+ description + ", numberPages=" + pages + "]";
 	}
-	
-	
 }
 
 
