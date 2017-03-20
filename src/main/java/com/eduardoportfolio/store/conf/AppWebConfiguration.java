@@ -3,9 +3,11 @@ package com.eduardoportfolio.store.conf;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.eduardoportfolio.store.controllers.HomeController;
+import com.eduardoportfolio.store.dao.ProductDao;
 
 /**
  * 
@@ -20,8 +22,8 @@ import com.eduardoportfolio.store.controllers.HomeController;
 //support to the RSS generator, and so one...
 @EnableWebMvc
 //through this annotation we indicate what package should be read.
-@ComponentScan(basePackageClasses={HomeController.class})
-public class AppWebConfiguration {
+@ComponentScan(basePackageClasses={HomeController.class, ProductDao.class})
+public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 
 	//Shows the Spring that the return from this method have to be registered as an object managed by the
 	//container. This objects in general are called Beans.
