@@ -25,6 +25,14 @@ public class Product {
 	public void setPages(int pages) {
 		this.pages = pages;
 	}	
+	
+	@Override
+	public String toString() {
+		return "Produto [title=" + title + ", description="
+				+ description + ", numberPages=" + pages + "]";
+	}
+	
+	
 }
 
 
