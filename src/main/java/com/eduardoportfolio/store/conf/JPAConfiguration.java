@@ -12,6 +12,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 public class JPAConfiguration {
 	
+	//Indicate that the objects created for this method, will be manage by Spring, and can be inject 
+	//in any part of the code.
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
 		
