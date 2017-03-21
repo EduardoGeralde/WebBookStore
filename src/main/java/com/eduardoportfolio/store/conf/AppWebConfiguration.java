@@ -11,7 +11,7 @@ import com.eduardoportfolio.store.dao.ProductDao;
 
 /**
  * 
- * @author Eduardo
+ * @author Eduardo Geralde Neto
  * 
  * This class was made to make some configuration. The InternalResourceViewResolver class, saves the path
  * for the root directory and for the suffix to add in any return from the controller methods.
