@@ -1,5 +1,9 @@
 package com.eduardoportfolio.store.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +29,10 @@ public class Product {
 	//Indicates that the attribute will be saved like a CLOB or BLOB in the DB
 	@Lob
 	private String description;
+	
+	@ElementCollection
+	private List<Price> prices = new ArrayList<Price>();
+	
 	private int pages;
 	
 	
@@ -39,6 +47,13 @@ public class Product {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public List<Price> getPrices() {
+		return prices;
+	}
+	public void setPrices(List<Price> prices) {
+		this.prices = prices;
 	}
 	public int getPages() {
 		return pages;
