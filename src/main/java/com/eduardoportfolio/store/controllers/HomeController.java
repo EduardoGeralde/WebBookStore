@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * 
  * @author Eduardo Geralde Neto
  * 
- *This class is a controller, responsible to meet requests from a client (browser).
+ *This class is a controller, responsible for requests from a client (browser).
  *
  */
 
-//@Controller annotation tells SpringMVC that this class , is effectively, the responsible to meet 
+//Tell SpringMVC that this class , is effectively, the responsible to meet 
 //requests from a client(browser).
 @Controller
 public class HomeController {

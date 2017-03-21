@@ -12,6 +12,8 @@ import com.eduardoportfolio.store.models.Product;
  * 
  * @author Eduardo Geralde Neto
  * 
+ * This class represents our Product CRUD, it's responsible to access the data.
+ * 
  */
 
 //Indicate that this class besides being managed for the Spring, it is responsible for the data access.

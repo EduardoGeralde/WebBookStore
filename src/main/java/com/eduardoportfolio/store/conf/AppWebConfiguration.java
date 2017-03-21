@@ -13,8 +13,8 @@ import com.eduardoportfolio.store.dao.ProductDao;
  * 
  * @author Eduardo Geralde Neto
  * 
- * This class was made to make some configuration. The InternalResourceViewResolver class, saves the path
- * for the root directory and for the suffix to add in any return from the controller methods.
+ * This class has some configurations. The InternalResourceViewResolver class, saves the path
+ * for the root directory and file suffix to add in any return from the controller methods.
  *
  */
 
@@ -28,6 +28,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	//Shows the Spring that the return from this method have to be registered as an object managed by the
 	//container. This objects in general are called Beans.
 	@Bean
+	//Save the information of the home folder and file suffix
 	public InternalResourceViewResolver internalResourceViewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");

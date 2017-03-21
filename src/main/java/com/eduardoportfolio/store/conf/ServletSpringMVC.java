@@ -4,7 +4,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 /**
  * 
- * @author Eduardo
+ * @author Eduardo Geralde Neto
  * 
  * The main objective of this class is show for the Spring MVC Servlet what classes should be read
  * and loaded.
@@ -20,7 +20,6 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 
 	//Returns one or more classes responsible for indicates which other classes has to be read during 
 	//the loading of the application.
-	
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		return new Class[] {AppWebConfiguration.class, JPAConfiguration.class};
