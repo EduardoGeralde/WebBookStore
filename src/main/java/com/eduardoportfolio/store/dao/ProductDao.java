@@ -23,7 +23,7 @@ public class ProductDao {
 	private EntityManager manager;
 	
 	public void save(Product product) {
-		manager.persist(manager);
+		manager.persist(product);
 	}
 	
 	
