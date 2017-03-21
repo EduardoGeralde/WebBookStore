@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 
- * @author Eduardo
+ * @author Eduardo Geralde Neto
  * 
  *This class is a controller, responsible to meet requests from a client (browser).
  *
@@ -23,9 +23,4 @@ public class HomeController {
 		System.out.println("Loading products");
 		return "hello-world";
 	}
-	
-	
-	
-	
-
 }
