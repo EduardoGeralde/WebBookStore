@@ -11,24 +11,27 @@
 		<finalName>WebBookStore</finalName>
 	</build>
 	<properties>
-		<failOnMissingWebXml>false</failOnMissingWebXml>
-		<maven.compiler.source>1.8</maven.compiler.source>
+		<failOnMissingWebXml>false</failOnMissingWebXml><maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework-version>4.2.5.RELEASE</org.springframework-version> <!-- wanted Spring version -->
+		<org.springframework.security-version>4.0.0.M2</org.springframework.security-version>
+		<org.slf4j-version>1.6.1</org.slf4j-version>
+		
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.1.0.RELEASE</version>
+			<version>${org.springframework-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-servlet-api</artifactId>
-			<version>8.0.36</version>
+			<version>7.0.30</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -67,28 +70,28 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.6.1</version>
+			<version>${org.slf4j-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
-			<version>1.6.1</version>
-			<scope>runtime</scope>
+			<version>${org.slf4j-version}</version>
+			<scope></scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.1</version>
-			<scope>runtime</scope>
+			<version>${org.slf4j-version}</version>
+			<scope></scope>
 		</dependency>
 
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.16</version>
-			<scope>runtime</scope>
+			<scope></scope>
 		</dependency>
 
 		<!-- JPA and Driver Configuration -->
