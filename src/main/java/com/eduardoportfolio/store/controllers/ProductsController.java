@@ -2,14 +2,16 @@ package com.eduardoportfolio.store.controllers;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.eduardoportfolio.store.dao.ProductDao;
 import com.eduardoportfolio.store.models.Product;
 
 /**
  * 
- * @author Eduardo
+ * @author Eduardo Geralde Neto
  * 
  *
  */
@@ -18,9 +20,12 @@ import com.eduardoportfolio.store.models.Product;
 @Transactional
 public class ProductsController {
 	
+	@Autowired
+	private ProductDao productDao;
+	
 	@RequestMapping("/products")
 	public String save(Product product) {
-		System.out.println("Registering the product"+product);
+		productDao.save(product);
 		return "products/ok";
 	}
 	
