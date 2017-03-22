@@ -11,27 +11,23 @@
 		<finalName>WebBookStore</finalName>
 	</build>
 	<properties>
-		<failOnMissingWebXml>false</failOnMissingWebXml><maven.compiler.source>1.8</maven.compiler.source>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<org.springframework-version>4.2.5.RELEASE</org.springframework-version> <!-- wanted Spring version -->
-		<org.springframework.security-version>4.0.0.M2</org.springframework.security-version>
-		<org.slf4j-version>1.6.1</org.slf4j-version>
-		
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${org.springframework-version}</version>
+			<version>4.1.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-servlet-api</artifactId>
-			<version>7.0.30</version>
+			<version>8.5.11</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -70,28 +66,28 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>${org.slf4j-version}</version>
+			<version>1.6.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${org.slf4j-version}</version>
-			<scope></scope>
+			<version>1.6.1</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>${org.slf4j-version}</version>
-			<scope></scope>
+			<version>1.6.1</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.16</version>
-			<scope></scope>
+			<scope>runtime</scope>
 		</dependency>
 
 		<!-- JPA and Driver Configuration -->
@@ -116,7 +112,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>${org.springframework-version}</version>
+			<version>4.1.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
