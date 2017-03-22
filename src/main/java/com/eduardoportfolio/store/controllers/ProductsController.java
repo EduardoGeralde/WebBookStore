@@ -5,8 +5,10 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.eduardoportfolio.store.dao.ProductDao;
+import com.eduardoportfolio.store.models.BookType;
 import com.eduardoportfolio.store.models.Product;
 
 /**
@@ -35,9 +37,11 @@ public class ProductsController {
 		return "products/ok";
 	}
 	
-	@RequestMapping("/products/form")
-	public String form(){
-		return "products/form";
+	@RequestMapping("/form")
+	public ModelAndView form(){
+		ModelAndView modelAndView = new ModelAndView("products/form");
+		modelAndView.addObject("types",BookType.values());
+		return modelAndView;
 	}
 }
 
