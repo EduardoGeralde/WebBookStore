@@ -43,5 +43,12 @@ public class ProductsController {
 		modelAndView.addObject("types",BookType.values());
 		return modelAndView;
 	}
+	
+	@RequestMapping("/products")
+	public ModelAndView list(){
+		ModelAndView modelAndView = new ModelAndView ("product/list");
+		modelAndView.addObject("products",productDao.list());
+		return modelAndView;
+	}
 }
 
