@@ -4,6 +4,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -43,6 +44,13 @@ public class ProductsController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public String save(Product product, RedirectAttributes redirectAttributes) {
+		
+		if (StringUtils.isEmpty(product.getTitle())){
+			//We add some error validation
+		}
+		if (StringUtils.isEmpty(product.getDescription())){
+			//We add some error validation
+		}
 		productDao.save(product);
 		redirectAttributes.addFlashAttribute("success","Product successfully registered");
 		return "redirect:products";
