@@ -23,8 +23,4 @@ public class ProductValidator implements Validator{
 	public boolean supports(Class<?> clazz) {
 		return Product.class.isAssignableFrom(clazz);
 	}
-	
-	
-	
-
 }
