@@ -57,7 +57,6 @@ public class ProductsController {
 		if(bindingResult.hasErrors()){
 			return "products/form";
 		}
-		
 		productDao.save(product);
 		redirectAttributes.addFlashAttribute("success","Product successfully registered");
 		return "redirect:products";
@@ -70,5 +69,6 @@ public class ProductsController {
 		return modelAndView;
 	}
 }
+
 
 
