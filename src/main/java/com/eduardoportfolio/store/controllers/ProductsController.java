@@ -41,9 +41,11 @@ public class ProductsController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public String save(Product product) {
+	public ModelAndView save(Product product) {
 		productDao.save(product);
-		return "redirect:products";
+		ModelAndView modelAndView = new ModelAndView ("redirect:products");
+		modelAndView.addObject("success","Product successfully registered");
+		return modelAndView;
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
