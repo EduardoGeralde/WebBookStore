@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * 
  * @author Eduardo Geralde Neto
  * 
- *This class is a controller, responsible for requests from a client (browser).
+ *This class is a controller, responsible for requests from a client (browser)
  *
  */
 
