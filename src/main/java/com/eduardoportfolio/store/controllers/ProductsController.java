@@ -51,7 +51,7 @@ public class ProductsController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(method=RequestMethod.POST)
+	@RequestMapping(method=RequestMethod.POST, name="saveProduct")
 	public ModelAndView save(@Valid Product product, BindingResult bindingResult, 
 											   RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()){
