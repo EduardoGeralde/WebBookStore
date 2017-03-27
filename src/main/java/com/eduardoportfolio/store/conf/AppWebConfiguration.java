@@ -1,7 +1,9 @@
 package com.eduardoportfolio.store.conf;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -36,4 +38,13 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 		return resolver;
 	}
 	
+	@Bean (name="messageSource")
+	//Tells Spring to use the messages.properties file, to change the validation error messages
+	public MessageSource messageSource(){
+		ReloadableResourceBundleMessageSource bundle = new ReloadableResourceBundleMessageSource();
+		bundle.setBasename("/WEB-INF/messages.properties");
+		bundle.setDefaultEncoding("UTF-8");
+		bundle.setCacheSeconds(1);
+		return bundle;
+	}
 }
