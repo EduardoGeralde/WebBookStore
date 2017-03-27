@@ -10,9 +10,9 @@
 <body>
 	<spring:hasBindErrors name="product">
 		<ul>
-		<c:forEach var="error" items="${errors.allErrors}">	
-			<li>${error.code}-${error.field}</li>
-		</c:forEach>
+			<c:forEach var="error" items="${errors.allErrors}">	
+				<li><spring:message code="${error.code}" text="${error.defaultMessage}"/></li>
+			</c:forEach>
 		</ul>
 	</spring:hasBindErrors>
 	<form action="${spring:mvcUrl('saveProduct').build()}" method="post">
