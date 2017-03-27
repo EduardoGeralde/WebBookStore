@@ -43,7 +43,7 @@ public class ProductsController {
 	@Autowired
 	private ProductDao productDao;
 	
-	//Tell MVC which URL this method should respond (Binding).
+	//Tell MVC which URL this method should respond (Binding)
 	@RequestMapping("/form")
 	public ModelAndView form(){
 		ModelAndView modelAndView = new ModelAndView("products/form");
