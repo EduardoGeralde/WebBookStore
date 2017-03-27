@@ -15,7 +15,7 @@
 		</c:forEach>
 		</ul>
 	</spring:hasBindErrors>
-	<form action="${spring:mvcUrl('PC#save').build()}" method="post">
+	<form action="${spring:mvcUrl('saveProduct').build()}" method="post">
 		<div>
 			<label for="title">Title</label> <input type="text" name="title"
 				id="title" />
