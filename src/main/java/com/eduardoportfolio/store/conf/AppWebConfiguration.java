@@ -42,7 +42,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	//Tells Spring to use the messages.properties file, to change the validation error messages
 	public MessageSource messageSource(){
 		ReloadableResourceBundleMessageSource bundle = new ReloadableResourceBundleMessageSource();
-		bundle.setBasename("/WEB-INF/messages.properties");
+		bundle.setBasename("/WEB-INF/messages");
 		bundle.setDefaultEncoding("UTF-8");
 		bundle.setCacheSeconds(1);
 		return bundle;
