@@ -13,6 +13,8 @@ import javax.persistence.Lob;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * 
@@ -40,6 +42,7 @@ public class Product {
 	private List<Price> prices = new ArrayList<Price>();
 	@Min(30)
 	private int pages;
+	@DateTimeFormat(iso=ISO.DATE)
 	private Calendar releaseDate;
 	
 	public Calendar getReleaseDate() {
