@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * 
@@ -25,13 +28,16 @@ public class Product {
 	//Indicates how the primary key will be generated
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@NotBlank
 	private String title;
 	//Indicates that the attribute will be saved like a CLOB or BLOB in the DB
 	@Lob
+	@NotBlank
 	private String description;
 	//Used to define a collection of Embeddable objects
 	@ElementCollection
 	private List<Price> prices = new ArrayList<Price>();
+	@Min(30)
 	private int pages;
 	
 	
