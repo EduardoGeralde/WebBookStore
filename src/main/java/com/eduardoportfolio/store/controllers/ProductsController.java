@@ -45,7 +45,7 @@ public class ProductsController {
 	
 	//Tell MVC which URL this method should respond (Binding)
 	@RequestMapping("/form")
-	public ModelAndView form(){
+	public ModelAndView form(Product product){
 		ModelAndView modelAndView = new ModelAndView("products/form");
 		modelAndView.addObject("types",BookType.values());
 		return modelAndView;
@@ -55,7 +55,7 @@ public class ProductsController {
 	public ModelAndView save(@Valid Product product, BindingResult bindingResult, 
 											   RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()){
-			return form();
+			return form(product);
 		}
 		productDao.save(product);
 		redirectAttributes.addFlashAttribute("success","Product successfully registered");
