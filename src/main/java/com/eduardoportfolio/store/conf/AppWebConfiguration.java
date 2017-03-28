@@ -53,6 +53,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	}
 	
 	@Bean
+	//Teach Spring that has always to use this formatting instead always write with @DateTimeFormat 
+	//for example.
 	public FormattingConversionService mvcConversionService(){
 		
 		DefaultFormattingConversionService conversionService = 
