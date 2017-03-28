@@ -16,7 +16,8 @@
 		</c:forEach>
 		</ul>
 	</spring:hasBindErrors>
-	<form:form action="${spring:mvcUrl('saveProduct').build()}" method="post" commandName="product">
+	<form:form action="${spring:mvcUrl('saveProduct').build()}" method="post" commandName="product"
+																		   enctype="multipart/form-data">
 		<div>
 			<label for="title">Title</label> 
 			<form:input path="title"/>
@@ -36,6 +37,11 @@
 			<label for="releaseDate">Release Date</label>
 			<form:input path="releaseDate" type="date"/>
 			<form:errors path="releaseDate"/>
+		</div>
+		<div>
+			<label for="summary">Book Summary</label>
+			<input type="file" name="summary"/>
+			<form:errors path="summaryPath"/>
 		</div>
 		<div>
 			<c:forEach items="${types}" var="bookType" varStatus="status">
