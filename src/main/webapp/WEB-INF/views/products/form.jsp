@@ -19,18 +19,23 @@
 	<form:form action="${spring:mvcUrl('saveProduct').build()}" method="post" commandName="product">
 		<div>
 			<label for="title">Title</label> 
-			<input type="text" name="title" id="title" />
+			<form:input path="title"/>
 			<form:errors path="title"/>
 		</div>
 		<div>
 			<label for="description">Description</label>
-			<textarea rows="10" cols="20" name="description" id="description"></textarea>
+			<form:textarea path="description" rows="10" cols="20"/>
 			<form:errors path="description"/>
 		</div>
 		<div>
 			<label for="pages">Number of Pages</label> 
-			<input type="text" name="pages" id="pages"/>
+			<form:input path="pages"/>
 			<form:errors path="pages"/>
+		</div>
+		<div>
+			<label for="releaseDate">Release Date</label>
+			<form:input path="releaseDate" type="date"/>
+			<form:errors path="releaseDate"/>
 		</div>
 		<div>
 			<c:forEach items="${types}" var="bookType" varStatus="status">
