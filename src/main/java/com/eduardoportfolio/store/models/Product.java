@@ -1,6 +1,7 @@
 package com.eduardoportfolio.store.models;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -39,8 +40,14 @@ public class Product {
 	private List<Price> prices = new ArrayList<Price>();
 	@Min(30)
 	private int pages;
+	private Calendar releaseDate;
 	
-	
+	public Calendar getReleaseDate() {
+		return releaseDate;
+	}
+	public void setReleaseDate(Calendar releaseDate) {
+		this.releaseDate = releaseDate;
+	}
 	public String getTitle() {
 		return title;
 	}
