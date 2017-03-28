@@ -5,6 +5,14 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * This embeddable class represents the lists of Book types and its values inside Product class.
+ * 
+ */
+
 @Embeddable
 public class Price {
 	
