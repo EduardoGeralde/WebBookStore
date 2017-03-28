@@ -1,5 +1,6 @@
 package com.eduardoportfolio.store.controllers;
 
+import javax.servlet.http.Part;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -56,8 +57,9 @@ public class ProductsController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, name="saveProduct")
-	public ModelAndView save(@Valid Product product, BindingResult bindingResult, 
+	public ModelAndView save(Part summary,@Valid Product product, BindingResult bindingResult, 
 											   RedirectAttributes redirectAttributes) {
+		System.out.println(summary.getName()+";"+summary.getHeader("content-disposition"));
 		if(bindingResult.hasErrors()){
 			return form(product);
 		}
