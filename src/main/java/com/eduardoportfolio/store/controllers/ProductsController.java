@@ -6,8 +6,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,13 +14,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.eduardoportfolio.store.dao.ProductDao;
 import com.eduardoportfolio.store.models.BookType;
 import com.eduardoportfolio.store.models.Product;
-import com.eduardoportfolio.store.validation.ProductValidator;
 
 /**
  * 
  * @author Eduardo Geralde Neto
  * 
- * This class is a controller responsible for all products transactions and request 
+ * This class is a controller responsible for all products transactions, flows, request
  *
  */
 
@@ -34,10 +31,17 @@ import com.eduardoportfolio.store.validation.ProductValidator;
 @RequestMapping("/products")
 public class ProductsController {
 	
+	/**
+	 * Do not need this customized validator anymore
+	 * 
+	//Indicates that always when a request come to this controller, this method has to be called
 	@InitBinder
+	//Just telling which validator Spring has to use. The name can be anyone, the important is receive
+	//a WebDataBinder and register a new validators.
 	protected void initBinder(WebDataBinder binder) {
 		binder.setValidator(new ProductValidator());
 	}
+	*/
 	
 	//Responsible to indicates the injection points inside the class (ProductDao).
 	@Autowired
