@@ -44,7 +44,14 @@ public class Product {
 	private int pages;
 	@DateTimeFormat(iso=ISO.DATE)
 	private Calendar releaseDate;
+	private String summaryPath;
 	
+	public String getSummaryPath() {
+		return summaryPath;
+	}
+	public void setSummaryPath(String summaryPath) {
+		this.summaryPath = summaryPath;
+	}
 	public Calendar getReleaseDate() {
 		return releaseDate;
 	}
