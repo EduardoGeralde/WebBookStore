@@ -1,5 +1,8 @@
 package com.eduardoportfolio.store.conf;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -29,6 +32,14 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	@Override
 	protected String[] getServletMappings() {
 		return new String [] {"/"};
+	}
+	
+	//Multi-part configuration, receives Dynamic type object, which allow us, among other things, to
+	//register our MultipartConfigElement configuration object. The constructor receiving only a empty
+	//string, indicates that the web server itself will decide where the files will be store temporarily.
+	@Override
+	protected void customizeRegistration (Dynamic registration){
+		registration.setMultipartConfig(new MultipartConfigElement(""));
 	}
 
 }
