@@ -1,6 +1,5 @@
 package com.eduardoportfolio.store.controllers;
 
-import javax.servlet.http.Part;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -9,10 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.eduardoportfolio.store.dao.ProductDao;
+import com.eduardoportfolio.store.infra.FileSaver;
 import com.eduardoportfolio.store.models.BookType;
 import com.eduardoportfolio.store.models.Product;
 
@@ -47,6 +48,8 @@ public class ProductsController {
 	//Responsible to indicates the injection points inside the class (ProductDao).
 	@Autowired
 	private ProductDao productDao;
+	@Autowired
+	private FileSaver fileSaver;
 	
 	//Tell MVC which URL this method should respond (Binding)
 	@RequestMapping("/form")
@@ -57,17 +60,20 @@ public class ProductsController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, name="saveProduct")
-	public ModelAndView save(Part summary,@Valid Product product, BindingResult bindingResult, 
-											   RedirectAttributes redirectAttributes) {
-		System.out.println(summary.getName()+";"+summary.getHeader("content-disposition"));
+	public ModelAndView save(MultipartFile summary,@Valid Product product, 
+					BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+		System.out.println(summary.getName()+";"+summary.getOriginalFilename());
 		if(bindingResult.hasErrors()){
 			return form(product);
 		}
+		String webPath = fileSaver.write("uploaded-images",summary);
+		product.setSummaryPath(webPath);
 		productDao.save(product);
+		
 		redirectAttributes.addFlashAttribute("success","Product successfully registered");
 		return new ModelAndView("redirect:products");
 	}
-	
+	 
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView list(){
 		ModelAndView modelAndView = new ModelAndView ("products/list");
