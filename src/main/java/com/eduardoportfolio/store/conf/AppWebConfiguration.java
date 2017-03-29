@@ -8,12 +8,15 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.eduardoportfolio.store.controllers.HomeController;
 import com.eduardoportfolio.store.dao.ProductDao;
+import com.eduardoportfolio.store.infra.FileSaver;
 
 /**
  * 
@@ -28,7 +31,7 @@ import com.eduardoportfolio.store.dao.ProductDao;
 //support to the RSS generator, and so one...
 @EnableWebMvc
 //through this annotation we indicate what package should be read.
-@ComponentScan(basePackageClasses={HomeController.class, ProductDao.class})
+@ComponentScan(basePackageClasses={HomeController.class, ProductDao.class,FileSaver.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 
 	//Shows the Spring that the return from this method have to be registered as an object managed by the
@@ -64,4 +67,10 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 		registrar.registerFormatters(conversionService);
 		return conversionService;
 	}
+	
+	@Bean
+	public MultipartResolver multipartResolver(){
+		return new StandardServletMultipartResolver();
+	}
 }
+
