@@ -17,12 +17,18 @@ public class FileSaver {
 	
 	public String write(String baseFolder, MultipartFile file){
 		String realPath = request.getServletContext().getRealPath("/"+baseFolder);
+		
+		File targetDirectory = new File(realPath);
+        targetDirectory.mkdirs();
+		
 		try{
-			String path = realPath + "/"+file.getOriginalFilename();
+			String path = realPath + File.separator+file.getOriginalFilename();
 			file.transferTo(new File(path));
-			return baseFolder+"/"+file.getOriginalFilename();
+			return baseFolder+File.separator+file.getOriginalFilename();
 		} catch (IOException e){
 			throw new RuntimeException(e);
 		}
 	}
 }
+
+
