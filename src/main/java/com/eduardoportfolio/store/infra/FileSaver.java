@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Component
 public class FileSaver {
+	
 	/**
 	@Autowired
 	private HttpServletRequest request;
@@ -21,16 +22,19 @@ public class FileSaver {
 		
 		File targetDirectory = new File(realPath);
         targetDirectory.mkdirs();
+        System.out.println(realPath);
 		
 		try{
 			String path = realPath + File.separator+file.getOriginalFilename();
 			file.transferTo(new File(path));
+			System.out.println(path);
 			return baseFolder+File.separator+file.getOriginalFilename();
 		} catch (IOException e){
 			throw new RuntimeException(e);
 		}
 	}
 	*/
+	
 	
 	public String write(String baseFolder, MultipartFile multipartFile) {
 		
@@ -52,6 +56,7 @@ public class FileSaver {
 		newClient.setS3ClientOptions(new S3ClientOptions().withPathStyleAccess(true));
 		return newClient;
 	}
+	
 	
 	
 }
