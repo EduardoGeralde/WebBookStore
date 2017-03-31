@@ -22,7 +22,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	}
 
 	//Returns one or more classes responsible for indicates which other classes has to be read during 
-	//the loading of the application.
+	//the loading of the application
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		return new Class[] {AppWebConfiguration.class, JPAConfiguration.class};
