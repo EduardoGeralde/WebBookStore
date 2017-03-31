@@ -11,10 +11,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Component
 public class FileSaver {
-	
+	/**
 	@Autowired
 	private HttpServletRequest request;
 	
+
 	public String write(String baseFolder, MultipartFile file){
 		String realPath = request.getServletContext().getRealPath("/"+baseFolder);
 		
@@ -29,4 +30,28 @@ public class FileSaver {
 			throw new RuntimeException(e);
 		}
 	}
+	*/
+	
+	public String write(String baseFolder, MultipartFile multipartFile) {
+		
+		AmazonS3Client s3 = client();
+		try{
+			s3.putObject("weebbookstore",multipartFile.getOriginalFileName(),
+										 multipartFile.getInputStream(),new ObjectMetadata());
+			return "https://s3.amazonaws.com/webbookstore/" + multipartFile.getOriginalFilename();
+			
+		} catch (AmazonClientException | IOException e){
+			throw new RuntimeException(e);
+		}
+	}
+	
+	private AmazonS3Client client(){
+		AWSCredentials credentials = new BasicAWSCredentials(,);
+		
+		AmazonS3Client newClient = new AmazonS3Client(credentials,new ClientConfiguration());
+		newClient.setS3ClientOptions(new S3ClientOptions().withPathStyleAccess(true));
+		return newClient;
+	}
+	
+	
 }
