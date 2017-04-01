@@ -41,10 +41,12 @@ public class FileSaver {
 		}
 	}
 	*/
+	
+	@Autowired
+	private AmazonS3Client s3;
 		
 	public String write(String baseFolder, MultipartFile multipartFile) {
 		
-		AmazonS3Client s3 = client();
 		try{
 			s3.putObject("weebbookstore",multipartFile.getOriginalFilename(),
 										 multipartFile.getInputStream(),new ObjectMetadata());
@@ -53,17 +55,5 @@ public class FileSaver {
 		} catch (AmazonClientException | IOException e){
 			throw new RuntimeException(e);
 		}
-	}
-	
-	private AmazonS3Client client(){
-		AWSCredentials credentials = new BasicAWSCredentials("AKIAIOSFODNN7EXAMPLE",
-															"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY");
-		
-		AmazonS3Client newClient = new AmazonS3Client(credentials,new ClientConfiguration());
-		newClient.setS3ClientOptions(new S3ClientOptions().withPathStyleAccess(true));
-		
-		//New line, pointing to the Ninja S3 server
-		newClient.setEndpoint("http://localhost:9444/s3");
-		return newClient;
 	}
 }
