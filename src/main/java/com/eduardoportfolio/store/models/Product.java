@@ -46,6 +46,10 @@ public class Product {
 	private Calendar releaseDate;
 	private String summaryPath;
 	
+	
+	public Integer getId() {
+		return id;
+	}
 	public String getSummaryPath() {
 		return summaryPath;
 	}
