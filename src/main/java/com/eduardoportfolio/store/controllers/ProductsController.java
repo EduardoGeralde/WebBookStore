@@ -80,6 +80,14 @@ public class ProductsController {
 		modelAndView.addObject("products",productDao.list());
 		return modelAndView;
 	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/show")
+	public ModelAndView show(Integer id){
+		ModelAndView modelAndView = new ModelAndView("products/show");
+		Product product = productDao.find(id);
+		modelAndView.addObject("product",product);
+		return modelAndView;
+	}
 }
 
 
