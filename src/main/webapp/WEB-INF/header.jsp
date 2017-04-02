@@ -1,7 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>	
 	<header id="layout-header">
@@ -15,16 +11,16 @@
 						<li><a href="${spring:mvcUrl('SCC#items').build()}" rel="nofollow">Seu carrinho (${shoppingCart.quantity}) </a></li>
 
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre
-								nÃ³s </a></li>
+								nós </a></li>
 
 						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas
 								Frequentes </a></li>
 								
 						<li>
-							<a href="<c:url value="/produtos?locale=pt"/>">PortuguÃªs</a>
+							<a href="<c:url value="/produtos?locale=pt"/>">Português</a>
 						</li>		
 						<li>
-							<a href="<c:url value="/produtos?locale=en_US"/>">InglÃªs</a>
+							<a href="<c:url value="/produtos?locale=en_US"/>">Inglês</a>
 						</li>		
 
 					</ul>
