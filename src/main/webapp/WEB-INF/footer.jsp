@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 	<footer id="layout-footer">
 		<div class="clearfix container">
@@ -20,7 +17,7 @@
 
 			<div id="collections-footer">
 				<!-- cdc-footer -->
-				<p class="footer-title">ColeÃ§Ãµes de ProgramaÃ§Ã£o</p>
+				<p class="footer-title">Coleções de Programação</p>
 				<ul class="footer-text-links">
 					<li><a href="/collections/livros-de-java">Java</a></li>
 					<li><a href="/collections/livros-desenvolvimento-web">Desenvolvimento
@@ -37,16 +34,16 @@
 			</div>
 			<div id="social-footer">
 				<!-- books-footer -->
-				<p class="footer-title">Links da Casa do CÃ³digo</p>
+				<p class="footer-title">Links da Casa do Código</p>
 				<ul class="footer-text-links">
 					<li><a href="http://livros.casadocodigo.com.br" rel="nofollow">Meus
 							E-books</a></li>
 					<li><a href="/pages/sobre-a-casa-do-codigo">Sobre a Casa
-							do CÃ³digo</a></li>
+							do Código</a></li>
 					<li><a href="/pages/perguntas-frequentes">Perguntas
 							Frequentes</a></li>
 					<li><a href="https://www.caelum.com.br">Caelum - Ensino e
-							InovaÃ§Ã£o</a></li>
+							Inovação</a></li>
 					<li><a href="http://www.codecrushing.com/" rel="nofollow">Code
 							Crushing</a></li>
 				</ul>
@@ -61,7 +58,7 @@
 			</div>
 			<div id="newsletter-footer">
 				<!-- social-footer -->
-				<p class="footer-title">Receba as Novidades e LanÃ§amentos</p>
+				<p class="footer-title">Receba as Novidades e Lançamentos</p>
 				<div id="form-newsletter">
 					<form
 						action="https://docs.google.com/spreadsheet/formResponse?formkey=dFhxZ2tDalFiclU4T2FLZVY4UXVUc2c6MQ&embedded=true&ifq"
@@ -78,7 +75,7 @@
 					<ul>
 						<li class="ie8"><a
 							href="https://docs.google.com/spreadsheet/viewform?formkey=dFhxZ2tDalFiclU4T2FLZVY4UXVUc2c6MQ&ifq"
-							rel="nofollow">Receba as Novidades e LanÃ§amentos</a></li>
+							rel="nofollow">Receba as Novidades e Lançamentos</a></li>
 					</ul>
 				</div>
 				<ul class="footer-payments">
