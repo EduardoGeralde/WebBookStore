@@ -34,7 +34,7 @@ public class ShoppingItem {
 	}
 	
 	public BigDecimal getPrice(){
-		/** Navegue também até a classe Product, para descobrir como é a implementação do método priceFor **/
+		/** Browse to the Product class to find out how the priceFor method is implemented. **/
 		return product.priceFor(bookType);
 	}
 
