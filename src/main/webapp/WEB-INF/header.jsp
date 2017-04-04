@@ -8,21 +8,20 @@
 				<nav id="main-nav">
 					<ul class="clearfix">
 
-						<li><a href="${spring:mvcUrl('SCC#items').build()}" rel="nofollow">Seu carrinho (${shoppingCart.quantity}) </a></li>
+						<li><a href="${spring:mvcUrl('SCC#items').build()}" rel="nofollow">Your
+						Shopping Cart (${shoppingCart.quantity}) </a></li>
 
-						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre
-								nós </a></li>
+						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">About us </a></li>
 
-						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas
-								Frequentes </a></li>
+						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Frequently asked 
+						question </a></li>
 								
 						<li>
-							<a href="<c:url value="/produtos?locale=pt"/>">Português</a>
+							<a href="<c:url value="/products?locale=pt"/>">Portuguese</a>
 						</li>		
 						<li>
-							<a href="<c:url value="/produtos?locale=en_US"/>">Inglês</a>
+							<a href="<c:url value="/products?locale=en_US"/>">English</a>
 						</li>		
-
 					</ul>
 				</nav>
 			</div>
@@ -30,7 +29,7 @@
 	</header>
 	<nav class="categories-nav">
 		<ul class="container">
-			<li class="category"><a href="http://www.casadocodigo.com.br">Home</a>
+			<li class="category"><a href="https://github.com/EduardoGeralde/WebBookStore">Home</a>
 			<li class="category"><a href="/collections/livros-de-agile">
 					<fmt:message key="navigation.category.agile"/>
 					<spring:message code="navigation.category.agile"/> 
