@@ -9,7 +9,7 @@
 					<ul class="clearfix">
 
 						<li><a href="${spring:mvcUrl('SCC#items').build()}" 
-						rel="nofollow">Your Shopping Cart (${sessionScope['scopedTarget.shoppingCart'].quantity}) </a></li>
+						rel="nofollow">Your Shopping Cart (${shoppingCart.quantity}) </a></li>
 
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">About us </a></li>
 
