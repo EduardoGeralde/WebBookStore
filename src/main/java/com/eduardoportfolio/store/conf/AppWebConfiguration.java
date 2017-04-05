@@ -44,6 +44,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
+		//this line exposes all our managed objects to be available for use through expression language
+		resolver.setExposeContextBeansAsAttributes(true);
 		return resolver;
 	}
 	
