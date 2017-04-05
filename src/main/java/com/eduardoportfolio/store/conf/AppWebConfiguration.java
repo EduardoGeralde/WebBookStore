@@ -45,7 +45,9 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
 		//this line exposes all our managed objects to be available for use through expression language
-		resolver.setExposeContextBeansAsAttributes(true);
+		//resolver.setExposeContextBeansAsAttributes(true);
+		//we can pass the exact class name to register and expose this objects for expression language
+		resolver.setExposedContextBeanNames("shoppingCart");
 		return resolver;
 	}
 	
