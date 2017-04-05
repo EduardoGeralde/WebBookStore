@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
 @Component
+//Indicate to Spring to modify the way that it creates objects, using this, we can add a smaller-scoped
+//objects into a larger-scoped objects, in this case Session scope into Application scope. Doing this, we
+//can leave the ShoppingCartController class without the Scope_Request.
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 
 public class ShoppingCart {
