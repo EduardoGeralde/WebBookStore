@@ -67,16 +67,15 @@
 			<tbody>
 				<c:forEach items="${shoppingCart.list}" var="item">
 					<tr>
-						<td class="cart-img-col"><img src=""
-							alt="${item.product.title}" /></td>
-						<td class="item-title">${item.product.title}-
-							${item.bookType}</td>
+						<td class="cart-img-col"><img src="" alt="${item.product.title}" /></td>
+						<td class="item-title">${item.product.title} - ${item.bookType}</td>
 						<td class="numeric-cell">${item.price}</td>
 						<td class="quantity-input-cell"><input type="number" min="0"
 							readonly="readonly" value="${shoppingCart.getQuantity(item)}"></td>
 						<td class="numeric-cell">${shoppingCart.getTotal(item)}</td>
 						<td class="remove-item"><form:form method="post"
-								action="${spring:mvcUrl('SCC#remove').arg(0,item.product.id).arg(1,item.bookType).build()}">
+							action="${spring:mvcUrl('SCC#remove').arg(0,item.product.id)
+							.arg(1,item.bookType).build()}">
 								<input type="image"
 									src="//cdn.shopify.com/s/files/1/0155/7645/t/177/assets/excluir.png?58522"
 									alt="Excluir" title="Excluir" />
