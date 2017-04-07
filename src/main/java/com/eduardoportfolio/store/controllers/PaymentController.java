@@ -28,10 +28,20 @@ public class PaymentController {
 		String uriToPay = "http://book-payment.herokuapp.com/payment";
 		try {
 			String response = restTemplate.postForObject(uriToPay, new PaymentData(total), String.class);
-		return "redirect:/success";
+		return "redirect:/payment/success";
 		} catch (HttpClientErrorException exception) {
 		return "redirect:/payment/error";
 		}
+	}
+	
+	@RequestMapping(value="/success")
+	public String success(){
+		return "payment/success";
+	}
+	
+	@RequestMapping(value="/error")
+	public String error(){
+		return "payment/error";
 	}
 }
 
