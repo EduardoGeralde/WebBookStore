@@ -45,5 +45,5 @@ public class PaymentController {
 	@RequestMapping(value = "/error")
 	public String error() {
 		return "payment/error";
-	}
+	}	
 }
