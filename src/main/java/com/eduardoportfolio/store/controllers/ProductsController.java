@@ -76,7 +76,7 @@ public class ProductsController {
 		return new ModelAndView("redirect:products");
 	}
 	
-	@Cacheable
+	@Cacheable (value="books")
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView list(){
 		ModelAndView modelAndView = new ModelAndView ("products/list");
