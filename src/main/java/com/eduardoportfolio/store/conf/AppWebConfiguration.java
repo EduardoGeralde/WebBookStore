@@ -1,8 +1,10 @@
 package com.eduardoportfolio.store.conf;
 
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
+import org.springframework.cache.guava.GuavaCacheManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -22,6 +24,7 @@ import com.eduardoportfolio.store.controllers.HomeController;
 import com.eduardoportfolio.store.dao.ProductDao;
 import com.eduardoportfolio.store.infra.FileSaver;
 import com.eduardoportfolio.store.models.ShoppingCart;
+import com.google.common.cache.CacheBuilder;
 
 /**
  * 
@@ -44,13 +47,6 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	//Shows the Spring that the return from this method have to be registered as an object managed by the
 	//container. This objects in general are called Beans.
 	@Bean
-	//Add class Responsible for effectively save the objects to be cached, we use here a simple implementation
-	//that is already done inside the Spring itself, the ConcurrentMapCacheManager.
-	public CacheManager cacheManager(){
-		return new ConcurrentMapCacheManager();
-	}
-
-	@Bean
 	//Save the information of the home folder and file suffix
 	public InternalResourceViewResolver internalResourceViewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -61,6 +57,23 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 		//we can pass the exact class name to register and expose this objects for expression language
 		resolver.setExposedContextBeanNames("shoppingCart");
 		return resolver;
+	}
+	
+	//Add class Responsible for effectively save the objects to be cached, we use here a simple implementation
+	//that is already done inside the Spring itself, the ConcurrentMapCacheManager.
+	/**@Bean
+	public CacheManager cacheManager(){
+		return new ConcurrentMapCacheManager();
+	}
+	*/
+	
+	@Bean
+	public CacheManager cacheManager(){
+		CacheBuilder<Object,Object> builder = CacheBuilder.newBuilder().maximumSize(100)
+															.expireAfterAccess(5, TimeUnit.MINUTES);
+		GuavaCacheManager cacheManager = new GuavaCacheManager();
+		cacheManager.setCacheBuilder(builder);
+		return cacheManager;
 	}
 	
 	@Bean (name="messageSource")
