@@ -23,7 +23,7 @@ public class PaymentIntegration implements Runnable{
 	
 	@Override
 	public void run(){
-		String uriToPay = "http://localhost:9000/payment";
+		String uriToPay = "http://book-payment.herokuapp.com/payment";
 		try{
 			String response = restTemplate.postForObject(uriToPay, new PaymentData(value),String.class);
 			//notification line
