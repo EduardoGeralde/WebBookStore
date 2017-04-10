@@ -1,5 +1,6 @@
 package com.eduardoportfolio.store.conf;
 
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -35,6 +36,7 @@ import com.eduardoportfolio.store.models.ShoppingCart;
 //through this annotation we indicate what package should be read.
 @ComponentScan(basePackageClasses={HomeController.class, ProductDao.class,
 														 FileSaver.class,ShoppingCart.class})
+@EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 
 	//Shows the Spring that the return from this method have to be registered as an object managed by the
