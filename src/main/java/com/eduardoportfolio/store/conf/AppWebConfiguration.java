@@ -1,6 +1,8 @@
 package com.eduardoportfolio.store.conf;
 
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -38,9 +40,16 @@ import com.eduardoportfolio.store.models.ShoppingCart;
 														 FileSaver.class,ShoppingCart.class})
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
-
+	
 	//Shows the Spring that the return from this method have to be registered as an object managed by the
 	//container. This objects in general are called Beans.
+	@Bean
+	//Add class Responsible for effectively save the objects to be cached, we use here a simple implementation
+	//that is already done inside the Spring itself, the ConcurrentMapCacheManager.
+	public CacheManager cacheManager(){
+		return new ConcurrentMapCacheManager();
+	}
+
 	@Bean
 	//Save the information of the home folder and file suffix
 	public InternalResourceViewResolver internalResourceViewResolver() {
