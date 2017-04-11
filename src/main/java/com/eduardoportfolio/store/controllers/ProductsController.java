@@ -1,5 +1,7 @@
 package com.eduardoportfolio.store.controllers;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -11,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -60,6 +63,15 @@ public class ProductsController {
 		ModelAndView modelAndView = new ModelAndView("products/form");
 		modelAndView.addObject("types",BookType.values());
 		return modelAndView;
+	}
+	
+	@RequestMapping(method=RequestMethod.GET,value="json")
+	//Indicates that the return method has to be used directly in the response body. If we do not use this
+	//annotation, Springs will search for a page, that is the normal behavior.
+	@ResponseBody
+	//Method to integrate with a external application, sending a list in JSON format.
+	public List<Product> listJson() {
+		return productDao.list();
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, name="saveProduct")
