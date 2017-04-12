@@ -65,6 +65,7 @@ public class ProductsController {
 		return modelAndView;
 	}
 	
+	/**
 	@RequestMapping(method=RequestMethod.GET,value="json")
 	//Indicates that the return method has to be used directly in the response body. If we do not use this
 	//annotation, Springs will search for a page, that is the normal behavior.
@@ -73,6 +74,7 @@ public class ProductsController {
 	public List<Product> listJson() {
 		return productDao.list();
 	}
+	*/
 	
 	@RequestMapping(method=RequestMethod.POST, name="saveProduct")
 	@CacheEvict(value="books", allEntries=true)
