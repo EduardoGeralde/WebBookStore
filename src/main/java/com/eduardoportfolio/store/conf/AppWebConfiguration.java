@@ -117,7 +117,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	}
 	
 	@Bean
-	//Create a ViewResolver list (XML, JSON, etc) and pass to a ContentNegotiatingViewResolver object
+	//Create a ViewResolver list for XML, JSON, etc (here just JSON) and pass to a 
+	//ContentNegotiatingViewResolver object
 	public ViewResolver contentNegotiatingViewResolver(ContentNegotiationManager manager){
 		List<ViewResolver> resolvers = new ArrayList<ViewResolver>();
 		resolvers.add(internalResourceViewResolver());
