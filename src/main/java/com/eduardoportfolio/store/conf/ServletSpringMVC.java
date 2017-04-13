@@ -16,9 +16,12 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
 
+	//The Spring Security filter is loaded before the Spring MVC Servlet, so we need that this configuration objects
+	//available before the Servlet, this is exactly what the geRootConfigClasses method do, it makes the classes to be read and loaded
+	//into a Listener that is read when the server goes up.
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return null;
+		return new Class[]{SecurityConfiguration.class};
 	}
 
 	//Returns one or more classes responsible for indicates which other classes has to be read during 
