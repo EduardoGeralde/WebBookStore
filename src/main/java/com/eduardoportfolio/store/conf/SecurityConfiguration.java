@@ -34,7 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserDetailsService users;
 	//We use a overload of the configure() method that receives an AutheticationManagerBuilder object, that allow us associate a new 
-	//UserDetailService with Spring Security
+	//UserDetailService with Spring Security, in addition, we force the password 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(users).passwordEncoder(new BCryptPasswordEncoder());
