@@ -21,14 +21,15 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	//into a Listener that is read when the server goes up.
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[]{SecurityConfiguration.class};
+		return new Class[]{SecurityConfiguration.class,AppWebConfiguration.class,
+								JPAConfiguration.class, AmazonConfiguration.class};
 	}
 
 	//Returns one or more classes responsible for indicates which other classes has to be read during 
 	//the loading of the application
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] {AppWebConfiguration.class, JPAConfiguration.class, AmazonConfiguration.class};
+		return new Class[] {};
 	}
 
 	//This method tells what's the pattern of address will be delegate to Spring MVC Servlet.
