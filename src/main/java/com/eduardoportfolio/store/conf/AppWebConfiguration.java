@@ -46,7 +46,7 @@ import com.google.common.cache.CacheBuilder;
 @EnableWebMvc
 //through this annotation we indicate what package should be read.
 @ComponentScan(basePackageClasses={HomeController.class, ProductDao.class,
-														 FileSaver.class,ShoppingCart.class})
+								FileSaver.class,ShoppingCart.class})
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	
