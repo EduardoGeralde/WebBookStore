@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 //Should be placed in top of Spring Security Configuration classes responsible for effective handle
-//the access rules.
+//the access rules
 @EnableWebSecurity
 //We inherit WebSecurityConfigurerAdapter class that already provide all infrastructure ready to start 
 //our security configurations. This annotation also loads other components, like SecurityExpressionLanguage
