@@ -18,7 +18,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 
 	//The Spring Security filter is loaded before the Spring MVC Servlet, so we need that this configuration objects
 	//available before the Servlet, this is exactly what the geRootConfigClasses method do, it makes the classes to be read and loaded
-	//into a Listener that is read when the server goes up.
+	//into a Listener that is read when the server goes up
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class[]{SecurityConfiguration.class,AppWebConfiguration.class,
