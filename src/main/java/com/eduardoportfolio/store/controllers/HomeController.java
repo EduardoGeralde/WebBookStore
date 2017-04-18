@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 //Tell SpringMVC that this class , is effectively, the responsible to meet 
-//requests from a client(browser).
+//requests from a client(browser)
 @Controller
 public class HomeController {
 	
