@@ -26,7 +26,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.POST,"/products").hasRole("ADMIN")
 		.antMatchers("/products/**").permitAll()
 		.anyRequest().authenticated()
-		.and().formLogin();
+		.and()
+		.formLogin().loginPage("/login").permitAll();
 	}
 	
 	//In order to implement the search (for user to apply the rules) in a best way for each application, Spring Security provides the 
