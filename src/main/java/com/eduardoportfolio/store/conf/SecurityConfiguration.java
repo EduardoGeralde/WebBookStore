@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 //Should be placed in top of Spring Security Configuration classes responsible for effective handle
 //the access rules
@@ -27,15 +28,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers("/products/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
-		.formLogin().loginPage("/login").permitAll();
+		.formLogin().loginPage("/login").permitAll()
+		.and()
+		.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}
 	
-	//In order to implement the search (for user to apply the rules) in a best way for each application, Spring Security provides the 
-	//UserDetailsService interface.
+	//In order to implement the search (for user to apply the rules) in a best way for each application, 
+	//Spring Security provides the UserDetailsService interface.
 	@Autowired
 	private UserDetailsService users;
-	//We use a overload of the configure() method that receives an AutheticationManagerBuilder object, that allow us associate a new 
-	//UserDetailService with Spring Security, in addition, we force the password 
+	//We use a overload of the configure() method that receives an AutheticationManagerBuilder object, 
+	//that allow us associate a new UserDetailService with Spring Security, in addition, we force the 
+	//password 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(users).passwordEncoder(new BCryptPasswordEncoder());
