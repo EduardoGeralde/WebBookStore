@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.eduardoportfolio.store.infra.RedirectAfterLogin;
+
 //Should be placed in top of Spring Security Configuration classes responsible for effective handle
 //the access rules
 @EnableWebMvcSecurity
@@ -26,9 +28,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers("/shopping/**").permitAll()
 		.antMatchers(HttpMethod.POST,"/products").hasRole("ADMIN")
 		.antMatchers("/products/**").permitAll()
-		.anyRequest().authenticated()
-		.and()
-		.formLogin().loginPage("/login").permitAll()
+		.anyRequest().authenticated()				//If we want to return a specific page after login using
+		.and()										//the RedirectAfterLogin class.
+		.formLogin().loginPage("/login").permitAll()//.successHandler(new RedirectAfterLogin())
 		.and()
 		.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}
