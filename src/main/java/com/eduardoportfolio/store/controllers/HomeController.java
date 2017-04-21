@@ -19,8 +19,6 @@ public class HomeController {
 	//Tell MVC which URL this method should respond (Binding).
 	@RequestMapping("/")
 	public String index(){
-		//Here we'll load the products
-		System.out.println("Loading products");
-		return "hello-world";
+		return "redirect:products";
 	}
 }
