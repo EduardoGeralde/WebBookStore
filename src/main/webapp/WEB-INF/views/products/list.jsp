@@ -3,15 +3,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Product List</title>
 </head>
 <body>
-	<security:authentication property="principal" var="user"/>
-	Hello ${user.name}
+	<sec:authorize access="isAuthenticated()">
+		<sec:authentication property="principal" var="user"/>
+		<div>
+			Hello ${user.name}
+		</div>
+	</sec:authorize>
+	<ul class="menu">
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<li>
+				<a href="${spring:mvcUrl('PC#form').build()}">Register New Product</a>
+			</li>
+		</sec:authorize>
+	</ul>
 	<table>
 		<tr>
 			<td>Titles</td>
