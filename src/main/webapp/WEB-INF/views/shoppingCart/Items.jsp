@@ -45,7 +45,7 @@
 </jsp:attribute>
 <jsp:body>
 	<section class="container middle">
-		<h2 id="cart-title">Seu carrinho de compras</h2>
+		<h2 id="cart-title">Your Shopping Cart</h2>
 		<table id="cart-table">
 			<colgroup>
 				<col class="item-col">
@@ -58,8 +58,8 @@
 				<tr>
 					<th class="cart-img-col"></th>
 					<th width="65%">Item</th>
-					<th width="10%">Preço</th>
-					<th width="10%">Quantidade</th>
+					<th width="10%">Value</th>
+					<th width="10%">Quantity</th>
 					<th width="10%">Total</th>
 					<th width="5%"></th>
 				</tr>
@@ -89,7 +89,7 @@
 					<td colspan="2"><form:form
 							action="${spring:mvcUrl('PC#checkout').build()}" method="post">
 							<input type="submit" class="checkout" name="checkout"
-								value="Finalizar compra " id="checkout" />
+								value="Checkout " id="checkout" />
 						</form:form></td>
 					<td class="numeric-cell">${shoppingCart.total}</td>
 					<td></td>
@@ -139,8 +139,7 @@
 		</ul>
 
 		<h2>
-			<a href="http://www.casadocodigo.com.br">Veja todos os livros que
-				publicamos!</a>
+			<a href="http://www.casadocodigo.com.br">See all published books</a>
 		</h2>
 	</section>
 </jsp:body>	
