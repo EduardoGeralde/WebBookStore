@@ -22,6 +22,7 @@
 
 	<%@include file="/WEB-INF/footer.jsp" %>
 	
+	<jsp:invoke fragment="extraScripts"/>
+	
 </body>
 </html>
-<jsp:invoke fragment="extraScripts"/>
