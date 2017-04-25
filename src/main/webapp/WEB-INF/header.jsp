@@ -27,13 +27,13 @@
 				<fmt:message key="navigation.category.front" /></a>
 		<li class="category"><a href="/collections/livros-de-games">
 				<fmt:message key="navigation.category.games" /></a>
-		<li class="category"><a href="/collections/livros-de-java"> <fmt:message
-					key="navigation.category.java" /></a>
+		<li class="category"><a href="/collections/livros-de-java"> 
+				<fmt:message key="navigation.category.java" /></a>
 		<li class="category"><a href="/collections/livros-de-mobile">
 				<fmt:message key="navigation.category.mobile" /></a>
 		<li class="category"><a href="/collections/livros-desenvolvimento-web"> 
 				<fmt:message key="navigation.category.web" /></a>
-		<li class="category"><a href="/collections/outros"> <fmt:message
-					key="navigation.category.others" /></a>
+		<li class="category"><a href="/collections/outros"> 
+				<fmt:message key="navigation.category.others" /></a>
 	</ul>
 </nav>
