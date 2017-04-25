@@ -4,12 +4,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Product List</title>
-</head>
-<body>
+<%@taglib tagdir="/WEB-INF/tags" prefix="customTags" %>
+
+<customTags:page bodyClass="list" title="${title}">
 	<sec:authorize access="isAuthenticated()">
 		<sec:authentication property="principal" var="user"/>
 		<div>
@@ -41,6 +38,5 @@
 			</tr>
 		</c:forEach>
 	</table>
-</body>
-</html>
+</customTags:page>
 
