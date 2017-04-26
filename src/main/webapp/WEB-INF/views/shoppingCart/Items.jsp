@@ -133,7 +133,6 @@
 							alt="Google Android: crie aplicações para celulares e tablets">
 				</a></li>
 			</ul>
-
 			<h2>
 				<a href="http://www.casadocodigo.com.br">See all published books</a>
 			</h2>
