@@ -13,6 +13,12 @@ import com.eduardoportfolio.store.models.Product;
 import com.eduardoportfolio.store.models.ShoppingCart;
 import com.eduardoportfolio.store.models.ShoppingItem;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ *
+ */
+
 @Controller
 @RequestMapping("/shopping")
 public class ShoppingCartController {
