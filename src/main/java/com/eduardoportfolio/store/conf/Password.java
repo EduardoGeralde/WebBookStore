@@ -2,6 +2,12 @@ package com.eduardoportfolio.store.conf;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ *
+ */
+
 public class Password {
 
 	public static void main(String[] args) {
