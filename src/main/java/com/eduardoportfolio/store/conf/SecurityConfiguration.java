@@ -12,6 +12,12 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.eduardoportfolio.store.infra.RedirectAfterLogin;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ *
+ */
+
 //Should be placed in top of Spring Security Configuration classes responsible for effective handle
 //the access rules
 @EnableWebMvcSecurity
