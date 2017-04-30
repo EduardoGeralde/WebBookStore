@@ -8,6 +8,12 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.S3ClientOptions;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ *
+ */
+
 public class AmazonConfiguration {
 
 	//Used just to tell that it produces an object that has to be managed by Spring
