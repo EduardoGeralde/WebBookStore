@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @author Eduardo Geralde Neto
  * 
  * This class isolates configurations such as driver, login, password, database url, JPA implementation,
- * and so on..
+ * and so on.
  * 
  */
 
