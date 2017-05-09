@@ -23,7 +23,7 @@ import com.eduardoportfolio.store.infra.RedirectAfterLogin;
 @EnableWebMvcSecurity
 //We inherit WebSecurityConfigurerAdapter class that already provide all infrastructure ready to start 
 //our security configurations. This annotation also loads other components, like SecurityExpressionLanguage
-//and WebInvocationPrivilegeEvaluator
+//and WebInvocationPrivilegeEvaluator.
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	
