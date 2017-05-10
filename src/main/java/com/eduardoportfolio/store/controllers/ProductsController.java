@@ -24,7 +24,7 @@ import com.eduardoportfolio.store.models.Product;
  * 
  * @author Eduardo Geralde Neto
  * 
- * This class is a controller responsible for all products transactions, flows, request
+ * This class is a controller responsible for all products transactions, flows, request.
  *
  */
 
