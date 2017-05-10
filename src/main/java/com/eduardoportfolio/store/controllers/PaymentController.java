@@ -15,6 +15,14 @@ import com.eduardoportfolio.store.models.PaymentData;
 import com.eduardoportfolio.store.models.ShoppingCart;
 import com.eduardoportfolio.store.service.PaymentIntegration;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ *
+ */
+
 @Controller
 @RequestMapping("/payment")
 public class PaymentController {
