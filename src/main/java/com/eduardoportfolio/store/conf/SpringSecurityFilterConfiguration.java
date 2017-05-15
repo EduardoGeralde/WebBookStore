@@ -5,7 +5,7 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
 /**
  * 
  * @author Eduardo Geralde Neto
- *
+ *.
  */
 
 public class SpringSecurityFilterConfiguration 
