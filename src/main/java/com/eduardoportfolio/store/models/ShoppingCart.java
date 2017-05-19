@@ -10,6 +10,13 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 @Component
 //Indicate to Spring to modify the way that it creates objects, using this, we can add a smaller-scoped
 //objects into a larger-scoped objects, in this case Session scope into Application scope. Doing this, we
