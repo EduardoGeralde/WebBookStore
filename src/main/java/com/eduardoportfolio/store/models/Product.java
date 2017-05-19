@@ -21,7 +21,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  * 
  * @author Eduardo Geralde Neto
  * 
- * This class is a Product model (POJO) class, represents our product table in the database
+ * This class is a Product model (POJO) class, represents our product table in the database.
  *
  */
 //Indicates that the class have to be represented by a table in DB
