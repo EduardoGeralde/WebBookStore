@@ -9,7 +9,7 @@ import javax.persistence.Embeddable;
  * 
  * @author Eduardo Geralde Neto
  * 
- * This embeddable class represents the lists of Book types and its values inside Product class.
+ * This embeddable class represents the lists of Book types and its values inside Product class..
  * 
  */
 
