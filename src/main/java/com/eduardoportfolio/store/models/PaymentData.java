@@ -2,6 +2,13 @@ package com.eduardoportfolio.store.models;
 
 import java.math.BigDecimal;
 
+/**
+ * 
+ * @author Eduardo Geralde Neto
+ * 
+ * 
+ */
+
 //Our payment system which we are performing the integration, requires that the format of the data be like
 //a Map, we need a key "value"associated with any value, that is why we need this class
 public class PaymentData {
