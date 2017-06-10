@@ -45,7 +45,7 @@ public class JPAConfiguration {
 	}
 	
 	@Bean
-	//Configure the database parameters.
+	//Configures the database parameters.
 	public DataSource dataSource(){
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
