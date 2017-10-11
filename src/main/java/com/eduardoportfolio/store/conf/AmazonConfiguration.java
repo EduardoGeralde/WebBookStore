@@ -11,7 +11,7 @@ import com.amazonaws.services.s3.S3ClientOptions;
 /**
  * 
  * @author Eduardo Geralde Neto.
- *
+ *.
  */
 
 public class AmazonConfiguration {
