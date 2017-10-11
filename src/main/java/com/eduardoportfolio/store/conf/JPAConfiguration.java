@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * 
  * This class isolates configurations such as driver, login, password, database url, JPA implementation,
  * and so on..
- * 
+ * .
  */
 
 //Indicates that we are using Spring transactional control.
