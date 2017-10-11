@@ -99,7 +99,7 @@ public class ProductsController {
 	
 	@RequestMapping("/{id}")
 	public ModelAndView show(@PathVariable("id") Integer id){
-		ModelAndView modelAndView = new ModelAndView("products/show");
+		ModelAndView modelAndView = new ModelAndView("products/showBook");
 		Product product = productDao.find(id);
 		modelAndView.addObject("product",product);
 		return modelAndView;
