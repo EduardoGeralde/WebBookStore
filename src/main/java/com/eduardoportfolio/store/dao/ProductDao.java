@@ -43,4 +43,12 @@ public class ProductDao {
 						Product.class).setParameter("id", id);
 		return query.getSingleResult();
 	}
+	
+	public void delete(Product product) {
+		manager.remove(product);
+	}
+	
+	public void update(Product product) {
+		manager.refresh(product);
+	}
 }
